@@ -1,0 +1,87 @@
+---
+import ButtonBanner from "./ButtonBanner.astro";
+---
+
+<section class="banner">
+  <img class="banner__png" src="/assets/earth.png" alt="earth'photo" />
+  <div class="banner__overlay"></div>
+  <div class="banner__title">
+    <h1>Iván Dominguez</h1>
+    <h3>Fullstack Developer, Freelance & Hardworking</h3>
+  </div>
+  <div class="banner__btn">
+    <ButtonBanner />
+  </div>
+</section>
+
+<style>
+  .banner {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    letter-spacing: -0.06em;
+    background-color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .banner__title {
+    z-index: 1;
+  }
+
+  .banner__title h3 {
+    margin: 0;
+    font-size: 1.7vw;
+    line-height: 1.4em;
+  }
+
+  .banner__title h1 {
+    margin: 0;
+    font-size: 7vw;
+    font-weight: 600;
+  }
+
+  .banner__btn {
+    position: relative;
+    top: 90px;
+  }
+
+  .banner__png {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(-90deg);
+  }
+
+  .banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.1) 15%
+    );
+  }
+  @keyframes text-background {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+</style>

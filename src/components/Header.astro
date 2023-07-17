@@ -1,108 +1,160 @@
----
-import MenuIcon from "./ui/MenuIcon.astro";
----
-
-<header class="header">
-  <MenuIcon />
+<header id="menu-button">
+  <div class="bars">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
 </header>
-<nav class="menu">
+<nav id="menu">
   <div class="shadow"></div>
   <div class="sidebar">
-    <ul>
-      <li>Inicio</li>
-      <li>Habilidades</li>
-      <li>Experiencia</li>
-      <li>Sobre mí</li>
-      <li>Proyectos</li>
+    <div id="exit-button" class="bars">
+      <div class="diagonal-line line-1"></div>
+      <div class="diagonal-line line-2"></div>
+    </div>
+    <ul class="links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Expertice</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Experience</a></li>
+      <li><a href="#">Inicio</a></li>
     </ul>
   </div>
 </nav>
 
+<script>
+  const menuButton = document.getElementById("menu-button");
+  const exitButton = document.getElementById("exit-button");
+  const shadow = document.getElementsByClassName("shadow");
+  const menu = document.getElementById("menu");
+  menuButton?.addEventListener("click", () => menu?.classList.toggle("show"));
+  exitButton?.addEventListener("click", () => menu?.classList.toggle("show"));
+  shadow[0]?.addEventListener("click", () => menu?.classList.toggle("show"));
+
+</script>
+
 <style>
-  .header {
+  /* burger button header */
+
+  #menu-button {
     position: fixed;
-    top: 10px;
+    top: 20px;
+    left: 10px;
     height: 65px;
     width: 65px;
-    margin-left: 10px;
     border-radius: 50%;
-    box-shadow: rgb(0 0 0 / 8%) 0 1px;
     background-color: #7d7d7d36;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 2;
   }
 
-  .header:active {
+  #menu-button:active {
     background-color: #cecece;
     transform: translateY(-3px);
   }
-  
 
-  .menu {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 11;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
-  }
-
-  #visibility {
-    visibility: visible;
-  }
+  /* sidebar */
 
   .sidebar {
     background: white;
     position: fixed;
     height: 100%;
-    top: 50px;
-    left: -40vw;
+    top: 0;
+    left: -100vw;
     overflow: auto;
-    padding: 20px 30px;
     max-width: 320px;
     width: 40vw;
-    transition: 0.3s;
-    border-top: 0.5px solid rgb(236, 236, 236);
+    transition: 0.1s;
+    z-index: 3;
   }
 
   .shadow {
-    position: fixex;
-    top: 50px;
+    position: fixed;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
     cursor: pointer;
+    z-index: 2;
+    display: none;
   }
 
-  #visibility .sidebar {
+  .show .sidebar {
     transition: 0.3s;
     left: 0;
   }
 
-  #visibility .shadow {
+  .show .shadow {
     left: 0;
+    top: 0;
+    display: inline-block;
     background-color: rgba(17, 21, 24, 0.45);
     opacity: 1;
     transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
   }
 
-  .sidebar ul {
+  .links {
     list-style: none;
     font-size: larger;
   }
 
-  .sidebar ul li {
+  .links li {
     margin-bottom: 20px;
     cursor: pointer;
   }
 
-  .sidebar ul li:hover {
+  .links li a {
+    text-decoration: none;
+  }
+
+  .links a:hover {
     text-decoration: underline;
+  }
+
+  /* Menu Icon */
+
+  .bars div {
+    width: 32px;
+    height: 4px;
+    background-color: #585858;
+    margin-bottom: 6px;
+    border-radius: 100px;
+  }
+
+  .bar2 {
+    width: 25px;
+  }
+
+  .bar3 {
+    width: 18px;
+  }
+
+  #exit-button {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #7d7d7d36;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .diagonal-line {
+    position: absolute;
+  }
+
+  .line-1 {
+    transform: rotate(-45deg);
+  }
+
+  .line-2 {
+    transform: rotate(45deg);
   }
 </style>

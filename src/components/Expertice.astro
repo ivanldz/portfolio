@@ -12,7 +12,7 @@ const expertices = await getCollection("expertice");
         return (
           <div class="grid-item">
             <div>
-              <Icon name={data.icon} width="50px" height="50px" />
+              <Icon name={data.icon} width="25px"/>
               <h3>{data.title}</h3>
             </div>
             <p class="item-text">{data.body}</p>
@@ -34,11 +34,6 @@ const expertices = await getCollection("expertice");
     padding: 50px;
     overflow-y: hidden;
     background-color: #000;
-    /* background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0) 0%,
-      rgba(42, 42, 42) 100%
-    ); */
   }
 
   .expertice h1 {
@@ -93,7 +88,7 @@ const expertices = await getCollection("expertice");
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     gap: 0;
   }
 
@@ -101,10 +96,7 @@ const expertices = await getCollection("expertice");
     display: inline-block;
     padding: 20px;
     color: #fff;
-    display: flex;
     border: 2px solid #a3a3a3;
-
-    flex-direction: column;
   }
 
   .tags {

@@ -1,12 +1,16 @@
 ---
-import ButtonBanner from "./ButtonBanner.astro";
+import ButtonBanner from "./ui/ButtonBanner.astro";
+import Photo from "./ui/Photo.astro";
 ---
 
 <section class="banner">
-  <img class="banner__png" src="/assets/earth.png" alt="earth'photo" />
-  <div class="banner__overlay"></div>
+  <!-- <img class="banner__png" src="/assets/earth.png" alt="earth'photo" />
+  <div class="banner__overlay"></div> -->
   <div class="banner__title">
-    <h1>Iván Dominguez</h1>
+    <div>
+      <Photo class="photo"/>
+      <h1>Iván Dominguez</h1>
+    </div>
     <h3>Fullstack Developer, Freelance & Hardworking</h3>
   </div>
   <div class="banner__btn">
@@ -36,17 +40,23 @@ import ButtonBanner from "./ButtonBanner.astro";
 
   .banner__title {
     z-index: 1;
+    margin: 0 auto;
+    overflow: hidden;
   }
+
 
   .banner__title h3 {
     margin: 0;
-    font-size: 1.7vw;
+    font-size: 15px;
     line-height: 1.4em;
   }
 
   .banner__title h1 {
     margin: 0;
-    font-size: 7vw;
+    line-height: 1;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 50px;
     font-weight: 600;
   }
 

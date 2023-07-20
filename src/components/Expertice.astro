@@ -12,7 +12,7 @@ const expertices = await getCollection("expertice");
         return (
           <div class="grid-item">
             <div>
-              <Icon name={data.icon} width="25px"/>
+              <Icon name={data.icon} width="25px" />
               <h3>{data.title}</h3>
             </div>
             <p class="item-text">{data.body}</p>
@@ -87,6 +87,7 @@ const expertices = await getCollection("expertice");
 
   .grid-container {
     display: grid;
+    padding: 10px;
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     gap: 0;
   }
@@ -154,5 +155,19 @@ const expertices = await getCollection("expertice");
 
   .tag:hover::after {
     border-left-color: rgb(220, 20, 170);
+  }
+
+  @media screen and (min-width: 768px) {
+    .grid-container {
+      padding: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .grid-container {
+      padding: 100px;
+      grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+    }
   }
 </style>

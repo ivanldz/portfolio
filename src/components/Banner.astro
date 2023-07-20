@@ -5,7 +5,7 @@ import Photo from "./ui/Photo.astro";
 
 <section class="banner">
   <!-- <img class="banner__png" src="/assets/earth.png" alt="earth'photo" />
-  <div class="banner__overlay"></div> -->
+  <div class="banner__overlay"></div>  -->
   <div class="banner__title">
     <div>
       <Photo class="photo"/>
@@ -66,11 +66,12 @@ import Photo from "./ui/Photo.astro";
   }
 
   .banner__png {
-    height: 100%;
+    width: 100%;
+    height: 50%;
     position: absolute;
-    top: 0;
-    right: 0;
-    transform: rotate(-90deg);
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
   }
 
   .banner__overlay {

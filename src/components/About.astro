@@ -11,19 +11,13 @@ import { Icon } from "astro-icon";
     </p>
   </div>
   <div class="map-content">
-    <img src="/assets/map.jpeg" alt="map" />
-    <div class="stars">
-      <Icon class="star" name="ic:sharp-star" />
-      <Icon class="star" name="ic:sharp-star" />
-      <Icon class="star" name="ic:sharp-star" />
-    </div>
+    <img src="/assets/map.webp" alt="map" />
   </div>
 </section>
 
 <style>
   section {
-    padding: 20px;
-    max-width: 700px;
+    padding: 0 10vw;
   }
 
   .text {
@@ -43,28 +37,15 @@ import { Icon } from "astro-icon";
   }
   .map-content {
     position: relative;
-  }
-
-  .stars {
-    background-color: rgb(118, 118, 118);
-    border-radius: 10px 10px 0 0;
-    display: inline-block;
-    position: absolute;
-    top: 1.1rem;
-    right: -1.8rem;
-    transform: rotate(90deg);
-    padding-bottom: 20px;
-    z-index: -1;
-  }
-
-  .star {
-    height: 1.1rem;
-    color: rgb(216, 216, 33);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
   }
 
   img {
     width: 100%;
-    margin: 0 auto;
+    max-width: 700px;
     border-radius: 20px;
     object-fit: cover;
   }

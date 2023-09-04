@@ -1,9 +1,7 @@
 ---
 title: Cloud
-icon: ic:outline-cloud
-body: I love the development of sites/applications with a well thought-out interface and polished functionalities.
-lenguajes:
-  [
+icon: /assets/icons/terminal-icon.png
+lenguajes: [
     "Docker",
     "Kubernetes",
     "Gitlab-CI",

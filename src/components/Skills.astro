@@ -1,0 +1,103 @@
+---
+import Icon from "./Icon.astro";
+import { getCollection } from "astro:content";
+const expertices = await getCollection("expertice");
+---
+
+<section>
+  <header>
+    <Icon src="assets/icons/skills-icon.png" height={50} width={50} />
+    <h1>Skillset</h1>
+  </header>
+  <div class="grid-container">
+    {
+      expertices.map(({ data }) => (
+        <div class="item">
+          <div class="title">
+            <img id="item-icon" src={data.icon} alt="icon" />
+            <h1>{data.title}</h1>
+          </div>
+          <ul class="lenguajes">
+            {data.lenguajes.map((l) => (
+              <li>{l}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--grey-secondary);
+  }
+
+  header h1 {
+    color: var(--color-primary);
+    margin-left: 10px;
+    font-size: 40px;
+  }
+
+  #item-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .grid-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .item {
+    color: var(--color-primary);
+    background-color: var(--backgorund-card-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 0.2px solid var(--border-primary-color);
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .lenguajes {
+    padding-left: 0px;
+  }
+
+  .lenguajes li {
+    display: inline-block;
+    margin: 2px;
+    font-weight: 400;
+  }
+
+  .title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .title h1 {
+    margin-left: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #item-icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+</style>

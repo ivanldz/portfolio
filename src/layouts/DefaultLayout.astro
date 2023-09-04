@@ -7,22 +7,16 @@ import Header from "../components/Header.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;900&display=swap">
     <title>Ivan Dominguez</title>
   </head>
   <body>
-    <Header />
+    <Header/>
     <slot />
   </body>
 </html>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;900&display=swap");
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
   html,
   body {
     max-width: 100%;

@@ -1,0 +1,127 @@
+---
+import { getCollection } from "astro:content";
+import Icon from "./Icon.astro";
+const works = await getCollection("work");
+---
+
+<section>
+  <header>
+    <Icon src="assets/icons/work-icon.png" height={50} width={50} />
+    <h1>Work Experience</h1>
+  </header>
+  <div>
+    <ul>
+      {
+        works.map(({ data }) => (
+          <li class="works">
+            <div class="header-item">
+              <div class="company-icon">
+                <Icon src={data.icon_path} />
+              </div>
+              <div class="title-job">
+                <div>
+                  <h1 class="company-name">{data.company}</h1>
+                </div>
+                <span class="date">
+                  {data.start_date} - {data.end_date}
+                </span>
+              </div>
+            </div>
+            <h3 class="rol">{data.rol}</h3>
+            <ul class="reponsabilities-list">
+              {data.responsabilities.map((r) => (
+                <li>{r}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--grey-secondary);
+  }
+
+  header h1 {
+    color: var(--color-primary);
+    margin-left: 10px;
+    font-size: 40px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .header-item {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .company-icon {
+    background-color: #fff;
+    border-radius: 40%;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+    margin-right: 10px;
+  }
+
+  .title-job {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .date {
+    color: var(--color-secondary);
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .rol {
+    font-size: 24px;
+    color: var(--accent-bold);
+    margin-top: -20px;
+    margin-left: 50px;
+  }
+
+  .company-name {
+    font-size: 32px;
+    color: var(--color-primary);
+  }
+
+  .reponsabilities-list li {
+    color: var(--color-primary);
+    position: relative;
+    margin-right: 0.5rem;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  .reponsabilities-list li::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: var(--marker-color);
+    margin-right: 10px;
+  }
+
+  .reponsabilities-list li:last-child {
+    margin-bottom: 50px;
+  }
+</style>

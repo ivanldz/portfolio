@@ -1,0 +1,140 @@
+---
+import Icon from "./Icon.astro";
+import Photo from "./ui/Photo.astro";
+
+const links = [
+  {
+    name: "Email",
+    href: "mailto:ivanleodomin01@gmail.com",
+    icon: "assets/icons/email-icon.png",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/ivan-leonel-dominguez/",
+    icon: "assets/icons/linkedin-icon.png",
+  },
+  {
+    name: "Github",
+    href: "https://github.com/ivanldz/",
+    icon: "assets/icons/github-icon.png",
+  },
+  {
+    name: "Discord",
+    href: "https://github.com/ivanldz/",
+    icon: "assets/icons/discord-icon.png",
+  },
+];
+---
+
+<section>
+  <div class="intro">
+    <div class="image-container">
+      <Photo />
+    </div>
+    <div class="data">
+      <h1>Iván L. Dominguez</h1>
+      <h3>Fullstack Developer</h3>
+      <div class="location">
+        <Icon src="assets/icons/map-icon.png" />
+        <span>Buenos Aires, Argentina</span>
+      </div>
+      <div class="grid-container">
+        {
+          links.map((l) => (
+            <div class="grid-item">
+              <Icon src={l.icon} />
+              <a href={l.href}>{l.name}</a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <p>
+    2-year experienced fullstack developer. Prioritizing smart development
+    practices and high performance outcomes. Always seeking efficient approaches
+    for robust and lightning-fast projects.
+  </p>
+</section>
+
+<style>
+  .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .image-container {
+    margin-right: 80px;
+  }
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .data {
+    padding: 10px;
+  }
+
+  .data h1 {
+    padding: 5px;
+    font-size: 50px;
+    color: var(--color-primary);
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .data h3 {
+    padding-left: 5px;
+    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: var(--color-secondary);
+    font-weight: 100;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+  }
+
+  .location span {
+    margin-left: 5px;
+    color: var(--color-secondary);
+    font-size: 20px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .grid-item {
+    color: var(--color-primary);
+    padding: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 20px;
+  }
+
+  .grid-item a {
+    text-decoration: inherit;
+    color: inherit;
+    margin-left: 10px;
+  }
+
+  p {
+    margin-top: 80px;
+    font-size: 24px;
+    color: var(--color-primary);
+    text-align: left;
+  }
+</style>

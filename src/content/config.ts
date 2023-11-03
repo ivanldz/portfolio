@@ -28,6 +28,7 @@ const project = defineCollection({
         title: z.string(),
         img: z.string(),
         body: z.string(),
+        repository: z.string()
     })
 });
 

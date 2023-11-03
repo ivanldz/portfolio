@@ -18,7 +18,7 @@ const expertices = await getCollection("expertice");
             <h1>{data.title}</h1>
           </div>
           <ul class="lenguajes">
-            {data.lenguajes.map((l) => (
+            {data.lenguajes.map((l, i) => (
               <li>{l}</li>
             ))}
           </ul>
@@ -76,6 +76,11 @@ const expertices = await getCollection("expertice");
     display: inline-block;
     margin: 2px;
     font-weight: 400;
+  }
+
+  .lenguajes li:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   .title {

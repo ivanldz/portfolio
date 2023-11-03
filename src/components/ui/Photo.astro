@@ -1,4 +1,8 @@
-<img src="/assets/profile-photo.png" alt="profile photo banner" />
+<img
+  class="profile-photo"
+  src="/assets/profile-photo.png"
+  alt="profile photo banner"
+/>
 
 <style>
   @keyframes morph {
@@ -13,7 +17,7 @@
       border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
     }
   }
-  img {
+  .profile-photo {
     width: 350px;
     height: 300px;
     object-fit: cover;
@@ -21,5 +25,11 @@
     max-width: 100%;
     padding-top: 40px;
     animation: morph 3.5s linear infinite;
+  }
+
+  @media (max-width: 650px) {
+    .profile-photo {
+      width: 220px
+    }
   }
 </style>

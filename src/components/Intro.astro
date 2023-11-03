@@ -50,11 +50,13 @@ const links = [
       </div>
     </div>
   </div>
-  <p>
-    2-year experienced fullstack developer. Prioritizing smart development
-    practices and high performance outcomes. Always seeking efficient approaches
-    for robust and lightning-fast projects.
-  </p>
+  <div class="presentation">
+    <p>
+      2-year experienced fullstack developer. Prioritizing smart development
+      practices and high performance outcomes. Always seeking efficient
+      approaches for robust and lightning-fast projects.
+    </p>
+  </div>
 </section>
 
 <style>
@@ -81,7 +83,7 @@ const links = [
 
   .data h1 {
     padding: 5px;
-    font-size: 50px;
+    font-size: min(6vw, 50px);
     color: var(--color-primary);
     margin-bottom: 0;
     margin-top: 0;
@@ -89,7 +91,7 @@ const links = [
 
   .data h3 {
     padding-left: 5px;
-    font-size: 32px;
+    font-size: min(4vw, 32px);
     margin-top: 5px;
     margin-bottom: 15px;
     color: var(--color-secondary);
@@ -104,7 +106,7 @@ const links = [
   .location span {
     margin-left: 5px;
     color: var(--color-secondary);
-    font-size: 20px;
+    font-size: min(3vw, 20px);
   }
 
   .grid-container {
@@ -131,10 +133,38 @@ const links = [
     margin-left: 10px;
   }
 
-  p {
+  .presentation {
     margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentation p {
     font-size: 24px;
     color: var(--color-primary);
     text-align: left;
+  }
+
+  @media (max-width: 650px) {
+    .grid-container {
+      width: min-content;
+    }
+    .grid-item img {
+      height: 20px;
+    }
+
+    .grid-item a {
+      font-size: 18px;
+    }
+
+    .image-container {
+      margin-right: 0;
+      padding: 0 10px;
+    }
+
+    p {
+      width: 80%;
+    }
   }
 </style>

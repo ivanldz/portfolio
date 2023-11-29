@@ -1,6 +1,6 @@
 ---
 title: Cloud
-icon: /assets/icons/terminal-icon.png
+icon: assets/icons/terminal-icon.png
 lenguajes: [
     "Docker",
     "Kubernetes",

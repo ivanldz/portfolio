@@ -12,6 +12,6 @@ responsabilities:
     "Enhanced the performance of multiple applications by increasing speed and stability.",
     "Provided technical support to team members and shared knowledge to foster a learning environment and collective progress."
 ]
-icon_path: "/assets/icons/cruce-icon.png"
+icon_path: "assets/icons/cruce-icon.png"
 tecnologies: []
 ---

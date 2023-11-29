@@ -13,6 +13,6 @@ responsabilities:
     "Promoted an inclusive classroom, fostering collaboration and diversity.",
     "Received accolades for creating a conducive learning environment and teaching with clarity.",
   ]
-icon_path: /assets/icons/coder-icon.png
+icon_path: assets/icons/coder-icon.png
 tecnologies: []
 ---

@@ -1,13 +1,18 @@
 ---
-import Icon from "./Icon.astro";
 import { getCollection } from "astro:content";
 const projects = await getCollection("project");
 ---
 
-<section>
-  <header>
-    <Icon src="assets/icons/skills-icon.png" height={50} width={50} />
-    <h1>Main Projects</h1>
+<section class="section-block">
+  <header class="seaction-header">
+    <img
+      class="icon-header"
+      src="assets/icons/skills-icon.png"
+      alt="icon"
+      height={50}
+      width={50}
+    />
+    <h1 class="header-title">Main Projects</h1>
   </header>
   <div class="grid-container">
     {
@@ -30,20 +35,6 @@ const projects = await getCollection("project");
 </section>
 
 <style>
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid var(--grey-secondary);
-  }
-
-  header h1 {
-    color: var(--color-primary);
-    margin-left: 10px;
-    font-size: 40px;
-  }
 
   .grid-container {
     margin-top: 50px;
@@ -150,6 +141,26 @@ const projects = await getCollection("project");
 
     .card-header {
       object-position: 1px 0px 0 1px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    
+
+    .icon-header {
+      margin-left: -10px;
+    }
+
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .card {
+      max-width: 300px;
     }
   }
 </style>

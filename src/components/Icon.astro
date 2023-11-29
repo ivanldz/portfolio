@@ -8,9 +8,15 @@ interface Props {
 const { src, height, width } = Astro.props;
 ---
 
-<img
-  src={src}
-  alt="icon"
-  height={height ?? 30}
-  width={width}
-/>
+<img src={src} alt="icon" height={height ?? 30} width={width} />
+
+<style>
+  img {
+    height: 30px;
+  }
+  @media (max-width: 500px) {
+    img {
+      height: 18px;
+    }
+  }
+</style>

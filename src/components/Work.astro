@@ -6,10 +6,16 @@ const works = await getCollection("work");
 
 <section>
   <header>
-    <Icon src="assets/icons/work-icon.png" height={50} width={50} />
+    <img
+      class="icon-header"
+      src="assets/icons/work-icon.png"
+      alt="icon"
+      height={50}
+      width={50}
+    />
     <h1>Work Experience</h1>
   </header>
-  <div>
+  <div class="list">
     <ul>
       {
         works.map(({ data }) => (
@@ -123,5 +129,49 @@ const works = await getCollection("work");
 
   .reponsabilities-list li:last-child {
     margin-bottom: 50px;
+  }
+
+  @media (max-width: 500px) {
+    section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    header {
+      justify-content: center;
+    }
+
+    header h1 {
+      margin-left: 0;
+      font-size: 28px;
+      text-align: left;
+    }
+
+    .icon-header {
+      margin-left: -10px;
+    }
+
+    .list {
+      max-width: 75vw;
+    }
+
+    .company-name {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 12px;
+    }
+
+    .rol {
+      font-size: 15px;
+      margin-top: -10px;
+      margin-left: 40px;
+    }
+
+    .reponsabilities-list li {
+      font-size: 15px;
+    }
   }
 </style>

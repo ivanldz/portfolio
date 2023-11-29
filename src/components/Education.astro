@@ -4,12 +4,18 @@ import Icon from "./Icon.astro";
 const education = await getCollection("education");
 ---
 
-<section>
-  <header>
-    <Icon src="/assets/icons/work-icon.png" height={50} width={50} />
-    <h1>Work Experience</h1>
+<section class="section-block">
+  <header class="seaction-header">
+    <img
+      class="icon-header"
+      src="/assets/icons/work-icon.png"
+      alt="icon"
+      height={50}
+      width={50}
+    />
+    <h1 class="header-title">Education</h1>
   </header>
-  <div>
+  <div class="item">
     <ul>
       {
         education.map(({ data }) => (
@@ -32,19 +38,8 @@ const education = await getCollection("education");
 </section>
 
 <style>
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid var(--grey-secondary);
-  }
-
-  header h1 {
-    color: var(--color-primary);
-    margin-left: 10px;
-    font-size: 40px;
+  .section-block {
+    margin-top: 30px;
   }
 
   ul {
@@ -107,5 +102,19 @@ const education = await getCollection("education");
 
   .topics-list li:last-child {
     margin-bottom: 50px;
+  }
+
+  @media (max-width: 500px) {
+    .date {
+      font-size: 15px;
+    }
+
+    .career-name {
+      font-size: 18px;
+    }
+
+    .item {
+      width: 70%;
+    }
   }
 </style>

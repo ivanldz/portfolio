@@ -1,13 +1,18 @@
 ---
-import Icon from "./Icon.astro";
 import { getCollection } from "astro:content";
 const expertices = await getCollection("expertice");
 ---
 
-<section>
-  <header>
-    <Icon src="assets/icons/skills-icon.png" height={50} width={50} />
-    <h1>Skillset</h1>
+<section class="section-block">
+  <header class="seaction-header">
+    <img
+      class="icon-header"
+      src="assets/icons/skills-icon.png"
+      alt="icon"
+      height={50}
+      width={50}
+    />
+    <h1 class="header-title">Skillset</h1>
   </header>
   <div class="grid-container">
     {
@@ -103,6 +108,16 @@ const expertices = await getCollection("expertice");
   @media (prefers-color-scheme: dark) {
     #item-icon {
       filter: brightness(0) invert(1);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .grid-container {
+      padding-right: 15px;
+    }
+    .item {
+      width: 100%;
+      max-width: 250px;
     }
   }
 </style>
